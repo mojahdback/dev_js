@@ -9,5 +9,5 @@ for(let i = 0; i < data.length ; i++){
 
 }
 
-
 console.log("The numbers largest then 50 is  " + count);
+
