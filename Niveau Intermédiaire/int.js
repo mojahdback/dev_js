@@ -78,4 +78,71 @@ for(let i = 0; i< data.length ;i++){
 
 console.log(stringData);
 
+//Extraire uniquement les nombres situés aux index pairs
+// **** A
+    const indexPairs = data.filter((num, index )=> index % 2 === 0 );
+
+    console.log(indexPairs);
+
+// **** B 
+    for(let i = 0 ; i< data.length ;i++){
+     if(i % 2 === 0){
+        console.log(data[i]);
+     }
+    }
+
+// Trouver l’index d’un élément use findIndex()
+const indexFound = data.findIndex(num  => num === 56);
+
+console.log(indexFound);
+// use loops
+    
+let foundIndexElement = 65;
+
+let found = 0;
+
+for(let i =0 ;i< data.length ;i++){
+    if(foundIndexElement === data[i]){
+        found = i;
+        break;
+    }
+    else{
+        found = -1;
+    }
+}
+
+if(found === -1 ){
+      console.log(found);
+  
+}
+else{
+    console.log("this number in index : " + found);
+}
+
+//  Supprimer les doublons dans un tableau use new set()
+ 
+const myset = new Set(data);
+
+console.log(myset);
+
+// use loops
+
+const uniqueList = [];
+
+for(let value of data){
+    let deplicate = false;
+    for(let unValue of uniqueList){
+        if(value === unValue){
+            deplicate = true;
+            break;
+        }
+       
+    }
+    if(!deplicate){
+        uniqueList.push(value);
+    }
+
+}
+
+console.log(uniqueList);
 
