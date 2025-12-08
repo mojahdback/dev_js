@@ -146,3 +146,96 @@ for(let value of data){
 
 console.log(uniqueList);
 
+// Séparer le tableau en deux : pairs / impairs
+const tPairs = [];
+const tImpairs = [];
+
+data.filter(num => num % 2 === 0 ? tPairs.push(num) : tImpairs.push(num));
+
+console.log(tPairs);
+console.log(tImpairs);
+// use loop
+
+let pairsTable = [];
+let impairsTable = [];
+
+for(let value of data){
+    if(value % 2 === 0){
+        pairsTable.push(value);
+    }
+    else{
+        impairsTable.push(value);
+    }
+}
+
+console.log(pairsTable);
+console.log(impairsTable);
+
+// Extraire les 5 premiers éléments
+
+const part = data.slice(0 , 5);
+
+console.log(part);
+
+// With loop 
+
+let fiveElement = [];
+
+let i =0;
+
+while(i < 5 ){
+    fiveElement.push(data[i]);
+    i++;
+}
+
+console.log(fiveElement);
+
+// . Extraire les 5 derniers éléments
+
+const partFin = data.slice(-5);
+
+console.log(partFin);
+
+// les 5 derniers éléments utilse boucle
+
+let derniersElement = [];
+
+let i = data.length -5 ;
+
+while(i < data.length ){
+    derniersElement.push(data[i]);
+    i++;
+}
+
+console.log(derniersElement);
+
+// Créer un tableau contenant uniquement les carrés des nombres
+
+const carre = data.map(num => num * num);
+console.log(carre);
+
+// using loop 
+
+let arrCary = [];
+for(let value of data){
+    arrCary.push(value * value);
+}
+
+console.log(arrCary);
+
+// Supprimer tous les éléments inférieurs à 10
+
+let topThenTen= data.filter(num => num > 10)
+
+console.log(topThenTen);
+
+// use loop + push
+
+let arr = [];
+
+for(let value of data){
+    if(value > 10 ){
+        arr.push(value);
+    }
+}
+console.log(arr);
