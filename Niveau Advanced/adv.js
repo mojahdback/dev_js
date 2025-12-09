@@ -153,4 +153,62 @@ for(let i = 0 ; i< data.length -1 ;i++){
     }
 }
 
+// Créer un mapping :
 
+const obj = {
+    even : [],
+    odd : [],
+    total : 0
+};
+
+data.reduce((acc , value) => {
+    obj.total += value;
+
+    if(value % 2 === 0){
+        obj.even.push(value);
+    }
+    else{
+        obj.odd.push(value);
+    }
+    
+},0);
+
+console.log(obj);
+
+// using loop 
+
+const box = {
+    even : [],
+    odd : [],
+    total : 0
+};
+
+for(let value of data){
+    box.total += value;
+    if(value % 2 === 0){
+        box.even.push(value);
+    }
+    else{
+        box.odd.push(value);
+    }
+}
+
+console.log(box);
+
+// Générer un tableau contenant les nombres multipliés par leur index
+
+const multIndex = [];
+
+data.map((key, index) => multIndex.push(key * index));
+
+console.log(multIndex);
+
+// using loop
+
+const newData = [];
+
+for(let i = 0 ; i< data.length ; i++){
+    newData.push(data[i] * i);
+}
+
+console.log(newData);
