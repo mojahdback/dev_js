@@ -181,11 +181,11 @@ console.log(part);
 
 let fiveElement = [];
 
-let i =0;
+let k =0;
 
-while(i < 5 ){
-    fiveElement.push(data[i]);
-    i++;
+while(k < 5 ){
+    fiveElement.push(data[k]);
+    k++;
 }
 
 console.log(fiveElement);
@@ -200,11 +200,11 @@ console.log(partFin);
 
 let derniersElement = [];
 
-let i = data.length -5 ;
+let t = data.length -5 ;
 
-while(i < data.length ){
-    derniersElement.push(data[i]);
-    i++;
+while(t < data.length ){
+    derniersElement.push(data[t]);
+    t++;
 }
 
 console.log(derniersElement);
