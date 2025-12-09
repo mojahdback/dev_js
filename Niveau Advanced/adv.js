@@ -212,3 +212,138 @@ for(let i = 0 ; i< data.length ; i++){
 }
 
 console.log(newData);
+
+//  Remplacer les valeurs < 10 par 0
+
+const changeValue = [];
+data.map((value )=>{
+    if(value < 10 ){
+        changeValue.push(0);
+    }
+    else{
+        changeValue.push(value);
+    }
+    
+}  );
+
+console.log(changeValue);
+
+// using loop 
+
+const changeZero = [];
+
+for(let value of data){
+    if(value < 10){
+        changeZero.push(0);
+    }
+    else{
+         changeZero.push(value);
+    }
+
+}
+
+console.log(changeZero);
+
+//  Créer une fonction qui retourne :
+
+// Max : use Math.max()
+
+const Max = function Max(data){
+    return Math.max(...data);
+}
+
+console.log(Max(data));
+
+// without Math.max()
+
+
+const big = function Max(data){
+    let max = data[0];
+    for(i=0 ; i< data.length ; i++){
+        if(max < data[i]){
+            max = data[i]
+        }
+    }
+    return max;
+}
+
+console.log(big(data));
+
+// Max : use Math.min()
+
+const Min = function Min(data){
+    return Math.min(...data);
+}
+
+console.log(Min(data));
+
+
+
+// // without Math.min()
+
+const small = function Min(data){
+    let min = data[0];
+    for(i=0 ; i< data.length ; i++){
+        if(min > data[i]){
+            min = data[i]
+        }
+    }
+    return min;
+}
+
+console.log(small(data));
+
+// somme use reduce()
+
+const Sum = function Sum(data){
+    return data.reduce((acc , value ) => acc + value ,0);
+}
+
+console.log(Sum(data));
+
+// moyenne
+
+const moyen = function moyen(data){
+    return Sum(data) / data.length;
+}
+
+console.log(moyen(data));
+
+
+
+// use loop 
+
+const  sums = function sum(data){
+    let sum =0 ;
+    for(let value of data){
+    sum += value;
+    }
+    return sum;
+}
+
+console.log(sums(data));
+
+
+// use loop moyen
+
+const  Moyen = function moyen(data){
+    let sum =0 ;
+    let moyen = 0;
+    for(let value of data){
+    sum += value;
+    }
+
+    moyen = sum / data.length;
+    return moyen;
+}
+
+console.log(Moyen(data));
+
+// count 
+
+const count = function Count(data){
+    return data.length;
+};
+
+console.log(count(data));
+
