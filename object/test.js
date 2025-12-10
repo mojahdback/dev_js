@@ -11,3 +11,4 @@ const users = [
   { id: 9, name: "Ibrahim", age: 27, city: "Casablanca", score: 55 },
   { id: 10, name: "Jade", age: 24, city: "Agadir", score: 48 }
 ];
+

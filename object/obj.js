@@ -68,9 +68,7 @@ console.log(arrUsers);
 
 // using loop 
 
-
 const newUser = [];
-
 for(let i=0;i<users.length ;i++){
     let newObj = {};
     newObj.id = users[i].id;
@@ -83,5 +81,31 @@ for(let i=0;i<users.length ;i++){
 
 }
 console.log(newUser);
+
+//  Créer un tableau contenant uniquement les objets {name, score}
+// using map()
+
+
+const newArr = users.map(user => {
+        return {name: user.name,
+                score: user.score
+    }
+})
+
+console.log(newArr);
+
+// boucle + création d’objets
+
+const newUsers = [];
+for(let i=0;i<users.length ;i++){
+    let newObj = {
+       name : users[i].name,
+       score : users[i].score
+    
+    }
+    newUsers.push(newObj);
+}
+console.log(newUsers);
+
 
 
