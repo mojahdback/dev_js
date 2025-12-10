@@ -52,4 +52,36 @@ for(let i=0 ; i< users.length -1 ; i++){
 
 console.log(users);
 
+//Ajouter une propriété status: "active" à chaque utilisateur
+//use map() + spread
+
+const arrUsers = [];
+
+users.map((user) =>{
+    arrUsers.push({...user ,
+                    status:"active"
+                  })
+} );
+
+console.log(arrUsers);
+
+
+// using loop 
+
+
+const newUser = [];
+
+for(let i=0;i<users.length ;i++){
+    let newObj = {};
+    newObj.id = users[i].id;
+    newObj.name = users[i].name;
+    newObj.city = users[i].city;
+    newObj.age = users[i].age;
+    newObj.score = users[i].score;
+    newObj.status = "active";
+    newUser.push(newObj);
+
+}
+console.log(newUser);
+
 
