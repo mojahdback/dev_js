@@ -18,9 +18,14 @@ console.log(total);
 
 let cum = [];
 
-data.reduce((acc , v) => cum.push(acc + v) );
+data.reduce((acc , v) => {
+    const s = acc + v 
+    cum.push(s);
+    return s;
+},0);
 
 console.log(cum);
+
 // use loop 
 
 let result = [];
@@ -244,106 +249,97 @@ for(let value of data){
 
 console.log(changeZero);
 
+// Diviser le tableau en groupes de taille 4
+
+function methodOne(data){
+    const result = [];
+    for(let i =0 ;i< data.length ; i++){
+        if(i % 4 === 0 ){
+            const group  = data.slice(i ,i + 4);
+
+            result.push(group);
+
+        }
+    }
+
+    return result;
+}
+
+console.log(methodOne(data));
+
+// double boucle + index 
+ 
+function methodTwo(data) {
+    const result = [];
+    let index = 0;
+
+    while (index < data.length) {
+        const group = [];
+
+        for (let j = 0; j < 4 && index < data.length; j++) {
+            group.push(data[index]);
+            index++;
+        }
+
+        result.push(group);
+    }
+
+    return result;
+}
+console.log(methodTwo(data));
+
 //  Créer une fonction qui retourne :
 
-// Max : use Math.max()
 
-const Max = function Max(data){
-    return Math.max(...data);
-}
-
-console.log(Max(data));
-
-// without Math.max()
-
-
-const big = function Max(data){
-    let max = data[0];
-    for(i=0 ; i< data.length ; i++){
-        if(max < data[i]){
-            max = data[i]
-        }
+function All(data){
+    const arr = [];
+    const sum =  data.reduce((acc , value) => {
+                const S = acc + value;
+                return S;
+        },0);
+    let obj = {
+        max : Math.max(...data),
+        min : Math.min(...data),
+        sum : sum,
+        moyen : sum / data.length,
+        count : data.length
     }
-    return max;
+
+    arr.push(obj);
+  
+    return arr;
+
 }
 
-console.log(big(data));
-
-// Max : use Math.min()
-
-const Min = function Min(data){
-    return Math.min(...data);
-}
-
-console.log(Min(data));
-
-
-
-// // without Math.min()
-
-const small = function Min(data){
-    let min = data[0];
-    for(i=0 ; i< data.length ; i++){
-        if(min > data[i]){
-            min = data[i]
-        }
-    }
-    return min;
-}
-
-console.log(small(data));
-
-// somme use reduce()
-
-const Sum = function Sum(data){
-    return data.reduce((acc , value ) => acc + value ,0);
-}
-
-console.log(Sum(data));
-
-// moyenne
-
-const moyen = function moyen(data){
-    return Sum(data) / data.length;
-}
-
-console.log(moyen(data));
+console.log(All(data));
 
 
 
 // use loop 
 
-const  sums = function sum(data){
-    let sum =0 ;
-    for(let value of data){
-    sum += value;
+
+function All(data){
+    const arr = [];
+    let  max = data[0];
+    let min = data[0];
+    let sum  = 0;
+    for(let i =0 ; i< data.length ; i++){
+        if(max < data[i]){
+            max = data[i];
+        }
+        if(min > data[i]){
+            min = data[i];
+        }
+        sum += data[i];
+
     }
-    return sum;
+    let moyen = sum / data.length;
+    arr.push(max,min,sum, moyen);
+    return arr;
+
 }
 
-console.log(sums(data));
+console.log(All(data));
 
 
-// use loop moyen
-
-const  Moyen = function moyen(data){
-    let sum =0 ;
-    let moyen = 0;
-    for(let value of data){
-    sum += value;
-    }
-
-    moyen = sum / data.length;
-    return moyen;
-}
-
-console.log(Moyen(data));
-
-// count 
-
-const count = function Count(data){
-    return data.length;
-};
-
-console.log(count(data));
 
